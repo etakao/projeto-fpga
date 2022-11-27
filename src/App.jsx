@@ -15,22 +15,35 @@ function App() {
     "reveal"
   ];
 
-  const [triviaToGuess, setTriviaToGuess] = useState(0);
+  let index = Math.floor(Math.random() * trivia.length);
+
+  const [triviaToGuess, setTriviaToGuess] = useState("");
+  const [triviaIndex, setTriviaIndex] = useState(index);
   const [guess, setGuess] = useState("");
   const [actualHint, setActualHint] = useState(0);
   const [isGuessed, setIsGuessed] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isInfosVisible, setIsInfosVisible] = useState(false);
+  const [guessed, setGuessed] = useState([]);
 
   useEffect(() => {
-    setTriviaToGuess(trivia[Math.floor(Math.random() * trivia.length)]);
+    setTriviaToGuess(trivia[index]);
   }, []);
 
   function reset() {
+    console.log(guessed);
+
+    while (guessed.includes(index)) {
+      index = Math.floor(Math.random() * trivia.length);
+    }
+
+    setTriviaIndex(index);
+    setTriviaToGuess(trivia[index]);
     setGuess("");
     setActualHint(0);
     setIsGuessed(false);
     setIsModalVisible(false);
-    setTriviaToGuess(trivia[Math.floor(Math.random() * trivia.length)]);
+
   }
 
   function handleSubmit(event) {
@@ -40,6 +53,7 @@ function App() {
       setActualHint(5);
       setIsGuessed(true);
       setIsModalVisible(true);
+      setGuessed([...guessed, triviaIndex])
       return;
     }
 
@@ -66,11 +80,11 @@ function App() {
     <div className="container">
       <h1>Projeto de FPGA</h1>
 
-      <div className={actualHint > 4 ? "options" : "hide"}>
-        <button type="button" onClick={() => setIsModalVisible(true)}>
+      <div className="options">
+        <button type="button" onClick={() => setIsInfosVisible(true)} className="default-button">
           <Info />
         </button>
-        <button type="button" onClick={reset}>Próxima aventura</button>
+        <button className={actualHint > 4 ? "show default-button" : "hide"} type="button" onClick={reset}>Próxima trivia</button>
       </div>
 
       <div className="image-hint">
@@ -106,18 +120,29 @@ function App() {
             autoFocus 
             disabled={(actualHint > 4) && true} 
           />
-          <button 
-            type="submit"
-            disabled={(actualHint > 4) && true} 
-          >
-            Adivinhar
-          </button>
+          {isGuessed ? (
+            <button 
+              type="button"
+              onClick={() => setIsModalVisible(true)} 
+              className="default-button"
+            >
+              Ver resposta
+            </button>
+          ) : (
+            <button 
+              type="submit"
+              disabled={(actualHint > 4) && true} 
+              className="default-button"
+            >
+              Adivinhar
+            </button>
+          )}
         </form>
       </div>
 
       <div className={isModalVisible ? "overlay" : "hide"} onKeyPress={handleKeyPress}>
         <div className="modal">
-          <button type="button" onClick={() => setIsModalVisible(false)}>
+          <button type="button" onClick={() => setIsModalVisible(false)} className="close-button">
             <X size={24} weight="bold" />
           </button>
 
@@ -129,10 +154,14 @@ function App() {
           />
 
           <span>A resposta era: {triviaToGuess.answer}</span>
-          
+
+          <div className="action-buttons">
+            <button type="button" onClick={() => setIsModalVisible(false)} className="default-button">Fechar</button>
+            <button type="button" onClick={reset} className="default-button">Próxima trivia</button>
+          </div>
         </div>
 
-        <Dialog.Root >
+        {/* <Dialog.Root >
           <Dialog.Trigger />
           <Dialog.Portal>
             <Dialog.Overlay />
@@ -147,7 +176,17 @@ function App() {
               </Dialog.Close>
             </Dialog.Content>
           </Dialog.Portal>
-        </Dialog.Root>
+        </Dialog.Root> */}
+      </div>
+
+      <div className={isInfosVisible ? "overlay" : "hide"}>
+        <div className="modal">
+          <h1>O jogo</h1>
+
+          <p>O jogo consistem em...</p>
+
+          <button onClick={() => setIsInfosVisible(false)} className="default-button">Fechar</button>
+        </div>
       </div>
     </div>
   )
