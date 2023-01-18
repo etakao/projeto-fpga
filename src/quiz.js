@@ -12,9 +12,20 @@ export const quiz = [
   },
   {
     hints: [
+      "Jogou no Cruzeiro",
+      "Jogou no Barcelona",
+      "Foi Bola de Ouro em 1997",
+      "Foi Campeão do Mundo em 2002",
+      "________, joga muito no Corinthians"
+    ],
+    image: "/assets/RONALDO.webp",
+    answer: "RONALDO"
+  },
+  {
+    hints: [
       "Emite os sinais de controle para os demais componentes do computador agirem e/ou realizarem alguma tarefa",
       "Seu principal componente é diretamente relacionado a uma fala de Godon Moore, conhecida como Lei de Moore",
-      "Suas atividades podem ser divididas em dois grandes grupos: função processamento e função controle",
+      "Suas atividades podem ser divididas em dois grandes grupos: função processamento e função controleSuas atividades podem ser divididas em dois grandes grupos: função processamento e função controle",
       "É um componente vital para o sistema de computação",
       "É o responsavel por qualquer operação realizada por um computador"
     ],
@@ -155,13 +166,72 @@ export const quiz = [
   },
   {
     hints: [
-      "Jogou no Cruzeiro",
-      "Jogou no Barcelona",
-      "Foi Bola de Ouro em 1997",
-      "Foi Campeão do Mundo em 2002",
-      "________, joga muito no Corinthians"
+      "Trata-se de um circuíto eletrônico, logo, uma peça de hardware",
+      "É o elemento básico e mais elementar de um sistema de computação",
+      "Varios componentes do hardware são fábricados a partir da combinação de milhões desses, como o processador, memórias principais e cache, etc",
+      "Há diversos tipos, cada uma capaz de implementar uma função especifica",
+      "Um de seus tipos é o AND"
     ],
-    image: "/assets/RONALDO.webp",
-    answer: "RONALDO"
+    image: "https://embarcados.com.br/wp-content/uploads/2015/08/and-gate1.png",
+    answer: "PORTAS LÓGICAS"
   },
+  {
+    hints: [
+      "São características dessa arquitetura: Pequeno conjunto de instruções, todas com largura fixa",
+      "Execução otimizada de chamada de funçoes",
+      "Menor quantidade de modos de endereçamento",
+      "Uso elevado de pipelining",
+      "Instruções são executadas de forma rápida (uma por clock)"
+    ],
+    image: "https://ipc2u.com/upload/medialibrary/b6a/b6a913667b6e758ed08b9dda563c81fb.jpg",
+    answer: "RISC"
+  },
+  {
+    hints: [
+      "São características dessa arquitetura: uso de microcódigo",
+      "Construção de conjuntos com instruções complexas",
+      "Criação de instruções de máquina semelhante à dos comandos de alto nível",
+      "Instruções de tamanhos variados",
+      "Pipeline práticamente impossível"
+    ],
+    image: "https://previews.123rf.com/images/yuriy2design/yuriy2design1311/yuriy2design131100023/29288912-complex-instruction-set-computing-cisc.jpg",
+    answer: "CISC"
+  },
+  {
+    hints: [
+      "Usam tecnologia SRAM",
+      "Tensão, consumo, velocidade, potência variam entre diferentes modelos e fabricantes",
+      "Arquitetura pode ser denominada como fine graned ou coarse graned",
+      "É formada por um bloco lógico configurável, interconexões e blocos de I/0",
+      "São reprogramáveis"
+      
+    ],
+    image: "https://previews.123rf.com/images/yuriy2design/yuriy2design1311/yuriy2design131100023/29288912-complex-instruction-set-computing-cisc.jpg",
+    answer: "FPGA"
+  },
+  {
+    hints: [
+      "É um circuíto lógico",
+      "Sua versão mais simples, é formada apenas com portas OR",
+      "Em suas entradas, recebe um valor e o transforma em outro",
+      "A conversão de símbolos conhecidos em desconhecidos é conhecida por codificação",
+      "Tem papel inverso a um decodificador"
+      
+    ],
+    image: "",
+    answer: "Codificador"
+  },
+  {
+    hints: [
+      "É composto apens por uma porta XOR",
+      "Compara as grandesas de dois números em binário para determinar a relação comparativa entre eles",
+      "Pode ser expandido com portas AND",
+      "Determina se dois números são iguais",
+      "Além de números iguais, é possível ter saídas extras que indicam qual dos dois valores é maior"
+      
+    ],
+    image: "",
+    answer: "Comparador"
+  },
+
 ]
