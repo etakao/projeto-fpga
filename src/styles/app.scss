@@ -254,3 +254,17 @@
   justify-content: end;
   gap: 10px;
 }
+
+.credits {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-top: 80px;
+  font-size: 12px;
+
+  @media (min-width: 720px) {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+  }
+}

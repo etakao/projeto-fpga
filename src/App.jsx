@@ -1,50 +1,50 @@
 import { useEffect, useState } from 'react';
 import { Info } from "phosphor-react";
 
-import { trivia } from "./trivia.js";
+import { quiz } from "./quiz.js";
 import './styles/app.scss';
 
 function App() {
+  // define the image classname which will gave it the blur effect
   const imageClassNames = [
-    "first ",
-    "second ",
-    "third ",
-    "fourth ",
-    "fifth ",
-    "reveal"
+    "first ", "second ", "third ", "fourth ", "fifth ", "reveal"
   ];
 
-  const [incompletedTrivia, setIncompletedTrivia] = useState([]);
-  const [triviaToGuess, setTriviaToGuess] = useState("");
-  const [triviaIndex, setTriviaIndex] = useState("");
-  const [guess, setGuess] = useState("");
-  const [actualHint, setActualHint] = useState(0);
-  const [isGuessed, setIsGuessed] = useState(false);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isInfosVisible, setIsInfosVisible] = useState(false);
-  const [isGameCompleted, setIsGameCompleted] = useState(false);
+  const [incompletedQuizzes, setIncompletedQuizzes] = useState([]); // incompleted quizzes
+  const [quizToGuess, setQuizToGuess] = useState(""); // actual quiz
+  const [quizIndex, setQuizIndex] = useState(""); // quiz's index in quiz.js archive
+  const [guess, setGuess] = useState(""); // player's guess
+  const [actualHint, setActualHint] = useState(0); // actual hint number 
+  const [isGuessed, setIsGuessed] = useState(false); // check if the player guessed
+  const [isModalVisible, setIsModalVisible] = useState(false); // answer modal visibility
+  const [isInfosVisible, setIsInfosVisible] = useState(false); // info modal visibility
+  const [isGameCompleted, setIsGameCompleted] = useState(false); // game completed modal visibility
 
-  let index = Math.floor(Math.random() * trivia.length);
-
+  
+  // function to setup the initial quiz
   function setup() {
-    setTriviaIndex(index);
-    setTriviaToGuess(trivia[index]);
-    setIncompletedTrivia(Array.from(Array(trivia.length).keys()));
+    let index = Math.floor(Math.random() * quiz.length); // get a random index from the quizzes
+    
+    setQuizIndex(index);
+    setQuizToGuess(quiz[index]);
+    setIncompletedQuizzes(Array.from(Array(quiz.length).keys()));
   }
 
+  // function to update the actual quiz to be guessed by the player
   function reset() {
-    let index = Math.floor(Math.random() * incompletedTrivia.length);
+    let index = Math.floor(Math.random() * incompletedQuizzes.length);
 
-    setTriviaIndex(incompletedTrivia[index]);
-    setTriviaToGuess(trivia[incompletedTrivia[index]]);
+    setQuizIndex(incompletedQuizzes[index]);
+    setQuizToGuess(quiz[incompletedQuizzes[index]]);
     setGuess("");
     setActualHint(0);
     setIsGuessed(false);
     setIsModalVisible(false);
   }
 
-  function handleNextTrivia() {
-    if (incompletedTrivia.length === 0) {
+  // function to get the next random quiz
+  function handleNextQuiz() {
+    if (incompletedQuizzes.length === 0) {
       setIsGameCompleted(true);
       setIsModalVisible(false);
       return;
@@ -53,13 +53,14 @@ function App() {
     reset();
   }
 
+  // function to verify if player's guess is correct and remove it from incompleted quiz
   function handleSubmit(event) {
     event.preventDefault();
     
-    if (guess.toUpperCase() === triviaToGuess.answer.toUpperCase()) {
+    if (guess.toUpperCase() === quizToGuess.answer.toUpperCase()) {
       setActualHint(5);
       setIsGuessed(true);
-      setIncompletedTrivia(incompletedTrivia.filter(number => number !== triviaIndex));
+      setIncompletedQuizzes(incompletedQuizzes.filter(number => number !== quizIndex));
       setIsModalVisible(true);
       return;
     }
@@ -73,10 +74,12 @@ function App() {
     setGuess("");
   }
 
+  // function to handle the image classname
   function handleImageClassName() {
     return imageClassNames[actualHint];
   }
 
+  // react hook that execute all functions inside it once the page is accessed
   useEffect(() => {
     setup();
   }, []);
@@ -89,15 +92,15 @@ function App() {
         <button type="button" onClick={() => setIsInfosVisible(true)} className="default-button">
           <Info />
         </button>
-        <button className={actualHint > 4 ? "default-button" : "invisible-button"} type="button" onClick={handleNextTrivia}>
-          Próxima trivia
+        <button className={actualHint > 4 ? "default-button" : "invisible-button"} type="button" onClick={handleNextQuiz}>
+          Próxima quiz
         </button>
       </div>
 
       <div className="image-hint">
         <div className="image">
           <img 
-            src={triviaToGuess.image}
+            src={quizToGuess.image}
             alt="Image to guess" 
             className={handleImageClassName()}
           />
@@ -106,7 +109,7 @@ function App() {
         <ol className="hint">
           <h3>Dicas:</h3>
 
-          {triviaToGuess && triviaToGuess.hints.map((hint, index) => {
+          {quizToGuess && quizToGuess.hints.map((hint, index) => {
             if (index <= actualHint) {
               return (
                 <li key={index}>{hint}</li>
@@ -154,15 +157,15 @@ function App() {
           <h2>{isGuessed ? "Acertou :)" : "Errou :("}</h2>
 
           <img 
-            src={triviaToGuess.image} 
+            src={quizToGuess.image} 
             alt="Image to guess"
           />
 
-          <span>A resposta era: {triviaToGuess.answer}</span>
+          <span>A resposta era: {quizToGuess.answer}</span>
 
           <div className="action-buttons">
             <button type="button" onClick={() => setIsModalVisible(false)} className="default-button">Fechar</button>
-            <button type="button" onClick={handleNextTrivia} className="default-button">Próxima trivia</button>
+            <button type="button" onClick={handleNextQuiz} className="default-button">Próxima quiz</button>
           </div>
         </div>
       </div>
@@ -192,6 +195,10 @@ function App() {
 
           <span>Você completou todos os desafios!</span>
         </div>
+      </div>
+
+      <div className="credits">
+        © 2022 Erick Yoshike & Willian Sotocorno. All rights reserved.
       </div>
     </div>
   )

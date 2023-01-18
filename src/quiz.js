@@ -1,4 +1,4 @@
-export const trivia = [
+export const quiz = [
   {
     hints: [
       "É uma SIGLA",
@@ -12,20 +12,9 @@ export const trivia = [
   },
   {
     hints: [
-      "Jogou no Cruzeiro",
-      "Jogou no Barcelona",
-      "Foi Bola de Ouro em 1997",
-      "Foi Campeão do Mundo em 2002",
-      "________, joga muito no Corinthians"
-    ],
-    image: "/assets/RONALDO.webp",
-    answer: "RONALDO"
-  },
-  {
-    hints: [
       "Emite os sinais de controle para os demais componentes do computador agirem e/ou realizarem alguma tarefa",
       "Seu principal componente é diretamente relacionado a uma fala de Godon Moore, conhecida como Lei de Moore",
-      "Suas atividades podem ser divididas em dois grandes grupos: função processamento e função controleSuas atividades podem ser divididas em dois grandes grupos: função processamento e função controle",
+      "Suas atividades podem ser divididas em dois grandes grupos: função processamento e função controle",
       "É um componente vital para o sistema de computação",
       "É o responsavel por qualquer operação realizada por um computador"
     ],
@@ -163,5 +152,16 @@ export const trivia = [
     ],
     image: "/assets/CLOCK.jpg",
     answer: "CLOCK"
+  },
+  {
+    hints: [
+      "Jogou no Cruzeiro",
+      "Jogou no Barcelona",
+      "Foi Bola de Ouro em 1997",
+      "Foi Campeão do Mundo em 2002",
+      "________, joga muito no Corinthians"
+    ],
+    image: "/assets/RONALDO.webp",
+    answer: "RONALDO"
   },
 ]
