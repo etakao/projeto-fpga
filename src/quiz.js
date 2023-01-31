@@ -25,7 +25,7 @@ export const quiz = [
     hints: [
       "Emite os sinais de controle para os demais componentes do computador agirem e/ou realizarem alguma tarefa",
       "Seu principal componente é diretamente relacionado a uma fala de Godon Moore, conhecida como Lei de Moore",
-      "Suas atividades podem ser divididas em dois grandes grupos: função processamento e função controleSuas atividades podem ser divididas em dois grandes grupos: função processamento e função controle",
+      "Suas atividades podem ser divididas em dois grandes grupos: função processamento e função controle",
       "É um componente vital para o sistema de computação",
       "É o responsavel por qualquer operação realizada por um computador"
     ],
@@ -166,13 +166,13 @@ export const quiz = [
   },
   {
     hints: [
-      "Trata-se de um circuíto eletrônico, logo, uma peça de hardware",
+      "Trata-se de um circuito eletrônico, logo, uma peça de hardware",
       "É o elemento básico e mais elementar de um sistema de computação",
       "Varios componentes do hardware são fábricados a partir da combinação de milhões desses, como o processador, memórias principais e cache, etc",
       "Há diversos tipos, cada uma capaz de implementar uma função especifica",
       "Um de seus tipos é o AND"
     ],
-    image: "https://embarcados.com.br/wp-content/uploads/2015/08/and-gate1.png",
+    image: "/assets/PORTAS_LOGICAS.jpg",
     answer: "PORTAS LÓGICAS"
   },
   {
@@ -183,7 +183,7 @@ export const quiz = [
       "Uso elevado de pipelining",
       "Instruções são executadas de forma rápida (uma por clock)"
     ],
-    image: "https://ipc2u.com/upload/medialibrary/b6a/b6a913667b6e758ed08b9dda563c81fb.jpg",
+    image: "/assets/RISC.jpg",
     answer: "RISC"
   },
   {
@@ -194,7 +194,7 @@ export const quiz = [
       "Instruções de tamanhos variados",
       "Pipeline práticamente impossível"
     ],
-    image: "https://previews.123rf.com/images/yuriy2design/yuriy2design1311/yuriy2design131100023/29288912-complex-instruction-set-computing-cisc.jpg",
+    image: "/assets/CISC.webp",
     answer: "CISC"
   },
   {
@@ -206,32 +206,140 @@ export const quiz = [
       "São reprogramáveis"
       
     ],
-    image: "https://previews.123rf.com/images/yuriy2design/yuriy2design1311/yuriy2design131100023/29288912-complex-instruction-set-computing-cisc.jpg",
+    image: "/assets/FPG.jpg",
     answer: "FPGA"
   },
   {
     hints: [
-      "É um circuíto lógico",
+      "É um circuito lógico",
       "Sua versão mais simples, é formada apenas com portas OR",
       "Em suas entradas, recebe um valor e o transforma em outro",
       "A conversão de símbolos conhecidos em desconhecidos é conhecida por codificação",
       "Tem papel inverso a um decodificador"
       
     ],
-    image: "",
+    image: "/assets/CODIFICADOR.jpg",
     answer: "Codificador"
   },
   {
     hints: [
-      "É composto apens por uma porta XOR",
+      "A porta OU-EXCLUSIVO pode ser usada como uma versão básica desse circuito",
       "Compara as grandesas de dois números em binário para determinar a relação comparativa entre eles",
       "Pode ser expandido com portas AND",
       "Determina se dois números são iguais",
       "Além de números iguais, é possível ter saídas extras que indicam qual dos dois valores é maior"
       
     ],
-    image: "",
+    image: "/assets/COMPARADOR.jpg",
     answer: "Comparador"
+  },
+  {
+    hints: [
+      "É um circuito lógico",
+      "São importantes em computadores e em outros tipos de sistemas digitais onde dados numéricos são processados",
+      "Sua versão mais básica aceita dois bits em suas entradas e produz dois bits em suas saídas, um de soma e um de carry",
+      "Dois ou mais podem ser combinados para operações mais complexas",
+      "Suas operações são adições binárias"
+      
+    ],
+    image: "/assets/SOMADOR.png",
+    answer: "SOMADOR"
+  },
+  {
+    hints: [
+      "É um circuito digital",
+      "A porta AND é usada como um de seus elementos básicos",
+      "Sua entrada pode ser de N elementos, variando com a necessidade do programador",
+      "Detecta a presença de uma combinação específica de bits em sua entrada",
+      "Qualquer entrada diferente da esperada resultará em uma saída de nível baixo"
+      
+    ],
+    image: "/assets/DECODIFICADOR.png",
+    answer: "DECODIFICADOR"
+  },
+  {
+    hints: [
+      "É um circuito digital",
+      "Decodificadores podem ser usados como esse circuito digital",
+      "É conhecido como distribuidor de dados",
+      "Recebe informações digitais a partir de uma linha e as redistribui à um determinado número de linhas de saída",
+      "Inverte a função da multiplexação"
+      
+    ],
+    image: "/assets/DEMULIPLEXADOR.png",
+    answer: "DEMULTIPLEXADOR"
+  },
+  {
+    hints: [
+      "Compoẽ um circuito lógico sequêncial",
+      "É possível se construir um registrador com esse tipo de circuito",
+      "É o elemento básico utilizado para se armazenar informações em um sistema digital",
+      "Pode armazernar um bit permanentemente, enquanto estiver energizado",
+      "Além de armazenar, permite também a leitura desse valor binário"
+      
+    ],
+    image: "/assets/",
+    answer: "FLIP-FLOP"
+  },
+  {
+    hints: [
+      "É um registrador",
+      "Seu incremento é realizado sempre pelo hardware",
+      "O seu conteúdo é modificado tão logo quanto a instrução que vai ser executada seja buscada da memória para o processador",
+      "É crucial para o processo de controle e sequenciamento da execução dos programas",
+      "Registrador cuja função específica é a armazenar o endereço da próxima instrução a ser executada"
+      
+    ],
+    image: "/assets/PROGRAM_COUNTER.jpg",
+    answer: "Contador de instrução"
+  },
+  {
+    hints: [
+      "",
+      "",
+      "",
+      "",
+      ""
+      
+    ],
+    image: "/assets/",
+    answer: ""
+  },
+  {
+    hints: [
+      "",
+      "",
+      "",
+      "",
+      ""
+      
+    ],
+    image: "/assets/",
+    answer: ""
+  },
+  {
+    hints: [
+      "",
+      "",
+      "",
+      "",
+      ""
+      
+    ],
+    image: "/assets/",
+    answer: ""
+  },
+  {
+    hints: [
+      "",
+      "",
+      "",
+      "",
+      ""
+      
+    ],
+    image: "/assets/",
+    answer: ""
   },
 
 ]
