@@ -295,27 +295,27 @@ export const quiz = [
   },
   {
     hints: [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "Dispositivo de armazenamento temporário",
+      "É considerado biestável (dois estados estáveis)",
+      "Possui uma realimentação regenerativa, na qual as saídas são conectadas de volta às entradas opostas",
+      "Possui os tipos S-R, S-R controlado e D controlado",
+      "São similares aos flip-flops"
       
     ],
-    image: "/assets/",
-    answer: ""
+    image: "/assets/LATCH.png",
+    answer: "LATCH"
   },
   {
     hints: [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "Circuito que pode ser usado como um monoestável ou um oscilador",
+      "Um monoestável possui apenas um estado estável, produzindo um único pulso de resposta",
+      "um oscilador oscila entre dois estados quase estáveis",
+      "Uma aplicação seria na lógica de controle de um semáforo",
+      "Outra aplicação seria a sequência de piscadas da seta de um automóvel"
       
     ],
-    image: "/assets/",
-    answer: ""
+    image: "/assets/TEMPORIZADOR.png",
+    answer: "TEMPORIZADOR"
   },
   {
     hints: [
