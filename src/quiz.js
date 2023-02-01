@@ -12,17 +12,6 @@ export const quiz = [
   },
   {
     hints: [
-      "Jogou no Cruzeiro",
-      "Jogou no Barcelona",
-      "Foi Bola de Ouro em 1997",
-      "Foi Campeão do Mundo em 2002",
-      "________, joga muito no Corinthians"
-    ],
-    image: "/assets/RONALDO.webp",
-    answer: "RONALDO"
-  },
-  {
-    hints: [
       "Emite os sinais de controle para os demais componentes do computador agirem e/ou realizarem alguma tarefa",
       "Seu principal componente é diretamente relacionado a uma fala de Godon Moore, conhecida como Lei de Moore",
       "Suas atividades podem ser divididas em dois grandes grupos: função processamento e função controle",
@@ -123,8 +112,8 @@ export const quiz = [
   {
     hints: [
       "É o componente responsável por interligar os demais componentes",
-      "No ____ de controle fluem sinais específicos da programação do sistema",
-      "O ____ de endereços é utilizado pelo processor para indicar onde buscar um dado, ou onde gravá-lo",
+      "No __________ de controle fluem sinais específicos da programação do sistema",
+      "O __________ de endereços é utilizado pelo processor para indicar onde buscar um dado, ou onde gravá-lo",
       "Possuem diferentes tamanhos (em bits), variando de acordo com o modelo do processador, servindo de passagem para bits de informação (instruções ou dados)",
       "Fisicamente, é composto por múltiplas linhas que servem como 'vias'"
     ],
@@ -319,27 +308,26 @@ export const quiz = [
   },
   {
     hints: [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "É um registrador",
+      "Atua após um ciclo de leitura em busca de instruções",
+      "Recebe a __________ via barramento externo de dados, barramento interno e RDM",
+      "Em computadores robustos ele não armazena uma __________ completa, mas somente uma parte dela",
+      "Tem a função de armazenar a instrução a ser executada pelo processador"
       
     ],
     image: "/assets/",
-    answer: ""
+    answer: "registrador de instrução"
   },
   {
     hints: [
-      "",
-      "",
-      "",
-      "",
-      ""
-      
+      "São componentes básicos de qualquer computador moderno",
+      "Esses dispositivos podem atuar transmitindo quantidades infímas de dados, ou quantidades colossáis",
+      "As transmissões feitas por esses podem ser inteligíveis para o ser humano ou apenas para a máquina",
+      "Permitem a interação entre usuário e máquina",
+      "São acoplados ao sistema de computação e interagem diretamente com o processador"
     ],
-    image: "/assets/",
-    answer: ""
+    image: "/assets/DISPOSITIVOS_E-S.jpg",
+    answer: "PERIFÉRICOS"
   },
 
 ]
